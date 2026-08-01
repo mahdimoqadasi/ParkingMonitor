@@ -25,9 +25,9 @@ button {
 
 html {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   background: var(--app-chrome-color);
-  overflow-x: hidden;
+  overflow: hidden;
   scrollbar-width: none;
   overscroll-behavior-y: none;
   -webkit-text-size-adjust: 100%;
@@ -39,11 +39,11 @@ body {
   position: relative;
   width: 100%;
   max-width: 100%;
-  min-height: -webkit-fill-available;
-  min-height: 100svh;
-  min-height: 100dvh;
+  height: 100%;
+  height: 100svh;
+  height: 100dvh;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   background: var(--app-chrome-color);
   scrollbar-width: none;
 }
@@ -91,14 +91,15 @@ html.standalone-mode .app-shell {
   z-index: 1;
   width: 100%;
   max-width: 44rem;
-  min-height: -webkit-fill-available;
-  min-height: 100svh;
-  min-height: 100dvh;
+  height: 100svh;
+  height: 100dvh;
   margin: 0 auto;
   padding: calc(0.7rem + env(safe-area-inset-top)) 0.7rem calc(1rem + env(safe-area-inset-bottom));
   display: grid;
-  align-content: start;
+  grid-template-rows: auto auto auto auto minmax(0, 1fr);
+  align-content: stretch;
   gap: 0.42rem;
+  overflow: hidden;
 }
 
 .app-shell > * {
@@ -386,6 +387,7 @@ h2 {
 }
 
 .next-days-heading {
+  flex: 0 0 auto;
   justify-content: center;
   padding: 0;
   background: transparent;
@@ -499,11 +501,24 @@ h2 {
 
 .schedule-list {
   display: grid;
+  flex: 1 1 auto;
+  align-content: start;
   gap: 0.35rem;
-  max-height: min(40svh, 25rem);
-  overflow: auto;
+  min-height: 0;
+  max-height: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding-left: 0.15rem;
   scrollbar-width: none;
+}
+
+.next-days-panel {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .schedule-list::-webkit-scrollbar {
