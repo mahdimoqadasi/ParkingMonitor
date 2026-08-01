@@ -67,7 +67,32 @@ body::-webkit-scrollbar {
 }
 
 html.standalone-mode .status-bar-guard {
-  height: calc(env(safe-area-inset-top, 0px) + 0.75rem);
+  height: max(env(safe-area-inset-top, 0px), 1.5rem);
+}
+
+html.standalone-mode,
+html.standalone-mode body {
+  height: 100%;
+  overflow: hidden;
+}
+
+html.standalone-mode .app-shell {
+  position: fixed;
+  top: max(env(safe-area-inset-top, 0px), 1.5rem);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 0.7rem;
+}
+
+html.standalone-mode .app-shell::-webkit-scrollbar {
+  display: none;
 }
 
 .app-shell::after {
