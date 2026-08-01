@@ -266,7 +266,7 @@ h1 {
   flex: 1 1 auto;
   min-width: 4.8rem;
   --car-duration: 60s;
-  --car-width: 3.15rem;
+  --car-width: 2.8rem;
   margin: 0 0.2rem;
   z-index: 1;
   height: 1.2rem;
@@ -288,9 +288,9 @@ h1 {
 .mini-car-vehicle {
   position: absolute;
   right: 0;
-  bottom: 0.16rem;
+  bottom: 0.14rem;
   width: var(--car-width);
-  height: 1.1rem;
+  height: 0.98rem;
   animation: car-patrol var(--car-duration) ease-in-out infinite;
   transform-origin: center bottom;
 }
@@ -298,9 +298,9 @@ h1 {
 .mini-car-body {
   position: absolute;
   right: 0;
-  bottom: 0.12rem;
-  width: 3.15rem;
-  height: 0.62rem;
+  bottom: 0.11rem;
+  width: var(--car-width);
+  height: 0.55rem;
   border-radius: 1rem 1.2rem 0.42rem 0.42rem;
   background: linear-gradient(90deg, #ffffff, #e2e8f0);
   box-shadow:
@@ -311,10 +311,10 @@ h1 {
 .mini-car-body::before {
   content: "";
   position: absolute;
-  top: -0.38rem;
-  right: 0.78rem;
-  width: 1.35rem;
-  height: 0.48rem;
+  top: -0.34rem;
+  right: 0.7rem;
+  width: 1.2rem;
+  height: 0.43rem;
   border-radius: 0.8rem 0.8rem 0.18rem 0.18rem;
   background:
     linear-gradient(110deg, transparent 0 26%, rgba(255, 255, 255, 0.92) 27% 62%, transparent 63%),
@@ -327,19 +327,19 @@ h1 {
 .mini-car-wheel {
   position: absolute;
   bottom: 0;
-  width: 0.42rem;
-  height: 0.42rem;
-  border: 0.12rem solid #e0f2fe;
+  width: 0.38rem;
+  height: 0.38rem;
+  border: 0.1rem solid #e0f2fe;
   border-radius: 50%;
   background: #0f172a;
 }
 
 .wheel-front {
-  right: 0.42rem;
+  right: 0.38rem;
 }
 
 .wheel-back {
-  right: 2.22rem;
+  right: 1.97rem;
 }
 
 @keyframes car-patrol {
