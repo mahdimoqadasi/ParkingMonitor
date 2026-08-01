@@ -53,16 +53,17 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.app-shell::before {
+body::before {
   content: "";
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 10;
-  height: env(safe-area-inset-top);
+  z-index: 1000;
+  height: max(env(safe-area-inset-top, 0px), 1px);
   background: var(--app-chrome-color);
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .app-shell::after {
