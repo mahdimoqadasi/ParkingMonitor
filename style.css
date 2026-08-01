@@ -1,7 +1,5 @@
 :root {
-  --app-chrome-color: #0f766e;
-  --bg-deep: #020708;
-  --bg-ink: #061118;
+  --app-chrome-color: #053b37;
   --teal: #00ffd5;
   --cyan: #00d9ff;
   --blue: #246bff;
@@ -28,7 +26,7 @@ button {
 html {
   width: 100%;
   min-height: 100%;
-  background: var(--bg-deep);
+  background: var(--app-chrome-color);
   overflow-x: hidden;
   scrollbar-width: none;
   overscroll-behavior-y: none;
@@ -46,41 +44,13 @@ body {
   min-height: 100dvh;
   margin: 0;
   overflow-x: hidden;
-  background:
-    radial-gradient(ellipse at 18% 4%, rgba(0, 255, 213, 0.2), transparent 15rem),
-    radial-gradient(ellipse at 92% 16%, rgba(0, 217, 255, 0.13), transparent 14rem),
-    radial-gradient(ellipse at 68% 96%, rgba(36, 107, 255, 0.16), transparent 18rem),
-    linear-gradient(160deg, #082526 0%, var(--bg-ink) 42%, var(--bg-deep) 100%);
-  background-color: var(--bg-deep);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: var(--app-chrome-color);
   scrollbar-width: none;
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 24%),
-    radial-gradient(ellipse at 50% 0%, rgba(159, 255, 233, 0.08), transparent 22rem);
-  pointer-events: none;
-  transform: translateZ(0);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(2, 7, 8, 0.28) 72%, rgba(2, 7, 8, 0.6) 100%);
-  pointer-events: none;
 }
 
 .app-shell::before {
@@ -103,7 +73,7 @@ body::after {
   left: 0;
   z-index: 0;
   height: env(safe-area-inset-bottom, 0px);
-  background: var(--bg-deep);
+  background: var(--app-chrome-color);
   pointer-events: none;
 }
 
@@ -563,8 +533,6 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after,
   .mini-car-vehicle {
     animation: none;
   }

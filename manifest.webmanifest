@@ -8,7 +8,7 @@
   "display": "standalone",
   "display_override": ["standalone", "browser"],
   "background_color": "#020708",
-  "theme_color": "#0f766e",
+  "theme_color": "#053b37",
   "icons": [
     {
       "src": "assets/icons/hipark-192.png",
