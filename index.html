@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0f766e">
+    <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: dark)">
+    <meta name="msapplication-TileColor" content="#0f766e">
+    <meta name="msapplication-navbutton-color" content="#0f766e">
+    <meta name="application-name" content="HiPark">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="HiPark">
+    <title>HiPark | برنامه پارکینگ هایبانک</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/hipark-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div id="liveDateTime" class="live-date-time" aria-live="polite">در حال دریافت زمان...</div>
+        <h1>برنامه پارکینگ هایبانک</h1>
+        <div class="parking-badges" aria-label="شماره پارکینگ‌ها">
+          <span>۱۹</span>
+          <span>۲۰</span>
+          <span>۲۱</span>
+        </div>
+      </header>
+
+      <div class="overview-grid">
+        <section class="panel today-panel" aria-labelledby="today-title">
+          <div class="section-heading">
+            <h2 id="today-title">امروز</h2>
+            <div class="mini-car" aria-hidden="true">
+              <span class="mini-car-vehicle">
+                <span class="mini-car-body"></span>
+                <span class="mini-car-wheel wheel-front"></span>
+                <span class="mini-car-wheel wheel-back"></span>
+              </span>
+            </div>
+            <span id="todayStatus" class="status-pill">در حال بررسی...</span>
+          </div>
+          <div id="todayCard" class="day-card featured"></div>
+        </section>
+
+        <section class="panel tomorrow-panel" aria-labelledby="tomorrow-title">
+          <div class="section-heading">
+            <h2 id="tomorrow-title">فردا</h2>
+          </div>
+          <div id="tomorrowCard" class="day-card"></div>
+        </section>
+      </div>
+
+      <div id="parkingHint" class="parking-hint">نام خود را انتخاب کنید</div>
+
+      <section class="panel search-panel" aria-label="فیلتر افراد">
+        <div id="personChips" class="person-chips" aria-label="افراد"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="schedule-title">
+        <div class="section-heading next-days-heading">
+          <h2 id="schedule-title">روزهای آینده</h2>
+        </div>
+        <div id="scheduleList" class="schedule-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
