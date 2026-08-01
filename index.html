@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="HiPark">
-    <title>HiPark | برنامه پارکینگ هایبانک</title>
+    <title>HiPark | برنامه پارکینگ‌های 19 20 21</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/hipark-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
@@ -22,18 +22,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260802-1">
   </head>
   <body>
     <div class="status-bar-guard" aria-hidden="true"></div>
     <main class="app-shell">
       <header class="hero">
-        <div id="liveDateTime" class="live-date-time" aria-live="polite">در حال دریافت زمان...</div>
-        <h1>برنامه پارکینگ هایبانک</h1>
-        <div class="parking-badges" aria-label="شماره پارکینگ‌ها">
-          <span>۱۹</span>
-          <span>۲۰</span>
-          <span>۲۱</span>
+        <div id="liveDateTime" class="live-date-time" aria-live="polite">
+          <span id="liveDateLabel">در حال دریافت تاریخ...</span>
+          <span class="live-time" aria-label="زمان جاری">
+            <span id="liveHour" class="time-part">--</span>
+            <span class="time-separator" aria-hidden="true">:</span>
+            <span id="liveMinute" class="time-part">--</span>
+            <span class="time-separator" aria-hidden="true">:</span>
+            <span id="liveSecond" class="time-part">--</span>
+          </span>
+        </div>
+        <div class="brand-row">
+          <img class="hero-logo" src="assets/icons/hipark-192.png" alt="HiPark" width="54" height="54">
+          <h1 class="brand-title">
+            <span>برنامه پارکینگ‌های</span>
+            <span class="title-parking-numbers" aria-label="پارکینگ‌های 21، 20 و 19">
+              <b>21</b>
+              <b>20</b>
+              <b>19</b>
+            </span>
+          </h1>
         </div>
       </header>
 

@@ -1595,7 +1595,10 @@ const schedule = [
 const todayCard = document.querySelector("#todayCard");
 const tomorrowCard = document.querySelector("#tomorrowCard");
 const todayStatus = document.querySelector("#todayStatus");
-const liveDateTime = document.querySelector("#liveDateTime");
+const liveDateLabel = document.querySelector("#liveDateLabel");
+const liveHour = document.querySelector("#liveHour");
+const liveMinute = document.querySelector("#liveMinute");
+const liveSecond = document.querySelector("#liveSecond");
 const parkingHint = document.querySelector("#parkingHint");
 const personChips = document.querySelector("#personChips");
 const scheduleList = document.querySelector("#scheduleList");
@@ -1659,8 +1662,10 @@ function getPersianWeekday(date) {
 function renderLiveDateTime() {
   const now = new Date();
   const jalaliDate = gregorianToJalali(now.getFullYear(), now.getMonth() + 1, now.getDate());
-  const time = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
-  liveDateTime.textContent = `${getPersianWeekday(now)} ${toPersianDigits(jalaliDate)} ${toPersianDigits(time)}`;
+  liveDateLabel.textContent = `${getPersianWeekday(now)} ${toPersianDigits(jalaliDate)}`;
+  liveHour.textContent = toPersianDigits(pad(now.getHours()));
+  liveMinute.textContent = toPersianDigits(pad(now.getMinutes()));
+  liveSecond.textContent = toPersianDigits(pad(now.getSeconds()));
 }
 
 function readSavedPerson() {
