@@ -72,7 +72,7 @@ html.standalone-mode .status-bar-guard {
 
 html.standalone-mode .app-shell {
   padding-top: max(calc(0.7rem + env(safe-area-inset-top, 0px)), 4.7rem);
-  padding-bottom: 0.2rem;
+  padding-bottom: 8px;
   display: flex;
   flex-direction: column;
 }
@@ -83,23 +83,6 @@ html.standalone-mode .next-days-panel {
   align-self: stretch;
 }
 
-html.standalone-mode .schedule-list {
-  padding-bottom: max(env(safe-area-inset-bottom, 0px), 0.2rem);
-  scroll-padding-bottom: max(env(safe-area-inset-bottom, 0px), 0.2rem);
-}
-
-.app-shell::after {
-  content: "";
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  height: env(safe-area-inset-bottom, 0px);
-  background: var(--app-chrome-color);
-  pointer-events: none;
-}
-
 .app-shell {
   position: relative;
   z-index: 1;
@@ -108,7 +91,7 @@ html.standalone-mode .schedule-list {
   height: 100svh;
   height: 100dvh;
   margin: 0 auto;
-  padding: calc(0.7rem + env(safe-area-inset-top)) 0.7rem calc(1rem + env(safe-area-inset-bottom));
+  padding: calc(0.7rem + env(safe-area-inset-top)) 0.7rem 8px;
   display: grid;
   grid-template-rows: auto auto auto auto minmax(0, 1fr);
   align-content: stretch;
