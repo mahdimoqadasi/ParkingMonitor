@@ -201,7 +201,7 @@ h1 {
   position: relative;
   flex: 1 1 auto;
   min-width: 4.8rem;
-  --car-duration: 30s;
+  --car-duration: 60s;
   --car-width: 3.15rem;
   margin: 0 0.2rem;
   z-index: 1;
