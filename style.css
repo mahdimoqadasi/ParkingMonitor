@@ -72,6 +72,14 @@ html.standalone-mode .status-bar-guard {
 
 html.standalone-mode .app-shell {
   padding-top: max(calc(0.7rem + env(safe-area-inset-top, 0px)), 4.7rem);
+  display: flex;
+  flex-direction: column;
+}
+
+html.standalone-mode .next-days-panel {
+  flex: 1 1 0;
+  width: 100%;
+  align-self: stretch;
 }
 
 .app-shell::after {
