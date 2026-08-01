@@ -1,3 +1,10 @@
+const standaloneMode =
+  window.navigator.standalone === true ||
+  window.matchMedia("(display-mode: standalone)").matches ||
+  window.matchMedia("(display-mode: fullscreen)").matches;
+
+document.documentElement.classList.toggle("standalone-mode", standaloneMode);
+
 const schedule = [
   {
     "date": "1405/04/26",

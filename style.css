@@ -53,17 +53,21 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-body::before {
-  content: "";
+.status-bar-guard {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 2147483647;
   height: max(env(safe-area-inset-top, 0px), 1px);
   background: var(--app-chrome-color);
   pointer-events: none;
+  -webkit-transform: translateZ(0);
   transform: translateZ(0);
+}
+
+html.standalone-mode .status-bar-guard {
+  height: calc(env(safe-area-inset-top, 0px) + 0.75rem);
 }
 
 .app-shell::after {
