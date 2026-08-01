@@ -70,12 +70,23 @@ html.standalone-mode .status-bar-guard {
   height: max(calc(env(safe-area-inset-top, 0px) + 0.35rem), 4rem);
 }
 
+html.standalone-mode,
+html.standalone-mode body {
+  height: 100vh;
+  min-height: 100vh;
+  background: var(--app-chrome-color);
+}
+
 html.standalone-mode .app-shell {
-  height: 100dvh;
+  position: fixed;
+  inset: 0;
+  height: auto;
+  min-height: 0;
   padding-top: max(calc(0.7rem + env(safe-area-inset-top, 0px)), 4.7rem);
   padding-bottom: 8px;
   display: flex;
   flex-direction: column;
+  background: var(--app-chrome-color);
 }
 
 html.standalone-mode .next-days-panel {
