@@ -101,6 +101,7 @@ const schedule = [
 const todayCard = document.querySelector("#todayCard");
 const tomorrowCard = document.querySelector("#tomorrowCard");
 const todayStatus = document.querySelector("#todayStatus");
+const todayPanel = document.querySelector(".today-panel");
 const liveDateLabel = document.querySelector("#liveDateLabel");
 const liveHour = document.querySelector("#liveHour");
 const liveMinute = document.querySelector("#liveMinute");
@@ -235,7 +236,10 @@ function renderCard(day, options = {}) {
 
   const card = div(`day-card ${options.featured ? "featured" : ""}`);
   const header = div("day-header");
-  header.append(div("day-title", day.weekday || "بدون روز"));
+  const dayTitle = options.title
+    ? `${options.title} · ${day.weekday || "بدون روز"}`
+    : day.weekday || "بدون روز";
+  header.append(div("day-title", dayTitle));
   header.append(div("day-date", day.date));
   card.append(header);
 
@@ -270,6 +274,7 @@ function renderTopCards() {
     emptyText: `برای امروز (${today}) رزروی در فایل ثبت نشده است.`
   }));
   replaceContent(tomorrowCard, renderCard(tomorrowData, {
+    title: "فردا",
     emptyText: `برای فردا (${tomorrow}) رزروی در فایل ثبت نشده است.`
   }));
 }
@@ -283,12 +288,16 @@ function renderParkingHint() {
   if (!activePerson) {
     parkingHint.textContent = "نام خود را انتخاب کنید";
     parkingHint.classList.remove("active");
+    todayPanel.classList.remove("has-parking-today");
     return;
   }
 
   parkingHint.classList.add("active");
   const today = browserJalaliDate(0);
   const tomorrow = browserJalaliDate(1);
+  const todayData = findByDate(today);
+  const hasParkingToday = todayData?.assignments.some((assignment) => assignment.person === activePerson) || false;
+  todayPanel.classList.toggle("has-parking-today", hasParkingToday);
   const todayNumber = jalaliDateNumber(today);
   const personDays = schedule
     .filter((day) => matchesSearch(day, activePerson))
